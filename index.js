@@ -110,6 +110,9 @@ export class MentionsTextInput extends Component {
             dataSource={this.props.suggestionsDataSource}
             renderRow={(rowData) => { return this.props.renderSuggestionsRow(rowData, this.stopTracking.bind(this)) } }
             />
+          {
+            this.props.loadingIndicator
+          }
         </Animated.View>
 
         <TextInput

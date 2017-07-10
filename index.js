@@ -118,10 +118,17 @@ export class MentionsTextInput extends Component {
         <TextInput
           {...this.props}
           onChange={(event) => {
+            if (event.nativeEvent.contentSize) {
+              this.setState({
+                textInputHeight: this.props.textInputMinHeight >= event.nativeEvent.contentSize.height ? this.props.textInputMinHeight : event.nativeEvent.contentSize.height,
+              });
+            }
+          }}
+          onContentSizeChange={(event) => {
             this.setState({
               textInputHeight: this.props.textInputMinHeight >= event.nativeEvent.contentSize.height ? this.props.textInputMinHeight : event.nativeEvent.contentSize.height,
             });
-          } }
+          }}
           ref={component => this._textInput = component}
           onChangeText={this.onChangeText.bind(this)}
           multiline={true}

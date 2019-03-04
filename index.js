@@ -121,13 +121,13 @@ export class MentionsTextInput extends Component {
           onChange={(event) => {
             if (event.nativeEvent.contentSize) {
               this.setState({
-                textInputHeight: Math.max(this.props.textInputMinHeight, event.nativeEvent.contentSize.height + (Platform.OS == "ios" ? 15 : 0)),
+                textInputHeight: event.nativeEvent.contentSize.height + (Platform.OS == "ios" ? 15 : 0),
               });
             }
           }}
           onContentSizeChange={(event) => {
             this.setState({
-              textInputHeight: Math.max(this.props.textInputMinHeight, event.nativeEvent.contentSize.height + (Platform.OS == "ios" ? 15 : 0)),
+              textInputHeight: event.nativeEvent.contentSize.height + (Platform.OS == "ios" ? 15 : 0),
             });
           }}
           ref={component => this._textInput = component}

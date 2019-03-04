@@ -134,7 +134,7 @@ export class MentionsTextInput extends Component {
           onChangeText={this.onChangeText.bind(this)}
           multiline={true}
           value={this.props.value}
-          style={[{ ...this.props.textInputStyle }, { height: Math.min(this.props.textInputMaxHeight, this.state.textInputHeight) }]}
+          style={[{ ...this.props.textInputStyle }, { height:  this.state.textInputHeight }]}
           placeholder={this.props.placeholder ? this.props.placeholder : 'Write a comment...'}
           placeholderTextColor={this.props.placeholderTextColor || "#C5C5C5"}
           />
